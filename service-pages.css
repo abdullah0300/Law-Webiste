@@ -1,0 +1,376 @@
+/* ==========================================
+   SERVICE PAGES - CLEAN & CENTERED
+   ========================================== */
+
+/* Navigation - Always Visible */
+.nav-sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #000000 !important;
+    z-index: 1000;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Universal Wrapper - Simple Centering */
+.wrapper {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+/* Hero Section */
+.service-hero {
+    background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 50%, rgba(144, 76, 233, 0.15) 0%, transparent 60%);
+    animation: pulse 8s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+.service-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    animation: fadeInUp 1s ease;
+}
+
+.service-hero-title {
+    font-family: 'Urbanist', sans-serif;
+    font-size: 64px;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.service-hero-subtitle {
+    font-family: 'Urbanist', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Introduction Section */
+.service-intro {
+    background: white;
+    padding: 100px 0;
+}
+
+.intro-paragraph {
+    font-family: 'Urbanist', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.8;
+    color: #1a1a1a;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.intro-paragraph:last-child {
+    margin-bottom: 0;
+}
+
+/* Service Content Section */
+.service-content {
+    background: #1a1a1a;
+    padding: 100px 0;
+}
+
+.section-heading {
+    font-family: 'Urbanist', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    color: #904ce9;
+    margin: 60px 0 30px 0;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+.section-heading:first-child {
+    margin-top: 0;
+}
+
+/* Service Box */
+.service-box {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 50px 40px;
+    margin-bottom: 40px;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-box:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: #904ce9;
+    transform: translateY(-5px);
+    box-shadow: 0 20px 60px rgba(144, 76, 233, 0.3);
+}
+
+.service-badge {
+    position: absolute;
+    top: -18px;
+    left: 40px;
+    background: linear-gradient(135deg, #904ce9 0%, #7a3bc8 100%);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    box-shadow: 0 4px 20px rgba(144, 76, 233, 0.5);
+}
+
+.service-box-title {
+    font-family: 'Urbanist', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+
+.service-box-text {
+    font-family: 'Urbanist', sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 20px;
+}
+
+.service-box-list {
+    list-style: none;
+    padding: 0;
+    margin: 25px 0;
+}
+
+.service-box-list li {
+    font-family: 'Urbanist', sans-serif;
+    font-size: 16px;
+    line-height: 2;
+    color: rgba(255, 255, 255, 0.85);
+    padding-left: 30px;
+    position: relative;
+    margin-bottom: 8px;
+}
+
+.service-box-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #904ce9;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.service-box-link {
+    display: inline-block;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: #904ce9;
+    text-decoration: none;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+}
+
+.service-box-link:hover {
+    color: white;
+    transform: translateX(10px);
+}
+
+.service-box-highlight {
+    background: linear-gradient(135deg, rgba(144, 76, 233, 0.15) 0%, rgba(144, 76, 233, 0.05) 100%);
+    border-color: #904ce9;
+}
+
+/* Call to Action Section */
+.service-cta {
+    background: linear-gradient(135deg, #904ce9 0%, #7a3bc8 100%);
+    padding: 120px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-cta::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 40px 40px;
+    animation: float 20s linear infinite;
+}
+
+@keyframes float {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(40px, 40px); }
+}
+
+.cta-heading {
+    font-family: 'Urbanist', sans-serif;
+    font-size: 48px;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.cta-subheading {
+    font-family: 'Urbanist', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.cta-btn {
+    display: inline-block;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #904ce9;
+    background: white;
+    padding: 18px 50px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.cta-btn:hover {
+    background: #1a1a1a;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .wrapper {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .service-hero-title {
+        font-size: 48px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .wrapper {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .service-hero {
+        min-height: 50vh;
+    }
+
+    .service-hero-title {
+        font-size: 38px;
+    }
+
+    .service-hero-subtitle {
+        font-size: 18px;
+    }
+
+    .service-intro,
+    .service-content {
+        padding: 60px 0;
+    }
+
+    .intro-paragraph {
+        font-size: 18px;
+    }
+
+    .service-box {
+        padding: 40px 25px;
+    }
+
+    .service-box-title {
+        font-size: 24px;
+    }
+
+    .cta-heading {
+        font-size: 36px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .service-hero-title {
+        font-size: 32px;
+    }
+
+    .service-hero-subtitle {
+        font-size: 16px;
+    }
+
+    .service-box {
+        padding: 30px 20px;
+    }
+
+    .service-box-title {
+        font-size: 22px;
+    }
+
+    .cta-heading {
+        font-size: 28px;
+    }
+
+    .cta-btn {
+        padding: 15px 35px;
+        font-size: 16px;
+    }
+}

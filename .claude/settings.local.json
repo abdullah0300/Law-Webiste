@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(claude mcp remove:*)",
+      "Bash(claude mcp add:*)",
+      "mcp__figma-desktop__get_metadata",
+      "mcp__figma-desktop__get_code",
+      "mcp__figma-desktop__get_screenshot",
+      "mcp__figma-desktop__create_design_system_rules",
+      "mcp__figma-desktop__get_design_context",
+      "WebSearch"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
