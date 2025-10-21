@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,20 +9,461 @@
     <link rel="stylesheet" href="service-pages.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&family=Poppins:wght@400&family=Source+Serif+Pro:wght@400&family=DM+Sans:wght@400&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&family=Poppins:wght@400&family=Source+Serif+Pro:wght@400&family=DM+Sans:wght@400&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Modern Immigration Page Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Urbanist', sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Enhanced Hero Section */
+        .immigration-hero {
+            position: relative;
+            height: 70vh;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+        }
+
+        .immigration-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://ik.imagekit.io/abdullah0300/Law/passport-7564502_1280.jpg?updatedAt=1761064195073') center/cover no-repeat;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .immigration-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, rgba(10, 10, 10, 0.3) 0%, rgba(10, 10, 10, 0.9) 100%);
+            z-index: 1;
+        }
+
+        .hero-content-wrapper {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 0 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 8px 24px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        .immigration-hero h1 {
+            font-size: clamp(42px, 6vw, 72px);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .immigration-hero p {
+            font-size: clamp(18px, 2vw, 22px);
+            color: #d0d0d0;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: #0f0f0f;
+            padding: 80px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffffff 0%, #888888 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 16px;
+            color: #a0a0a0;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        /* Introduction Section */
+        .intro-section {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-subtitle {
+            font-size: 14px;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 24px;
+        }
+
+        .intro-text {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #c0c0c0;
+            text-align: center;
+        }
+
+        .intro-text+.intro-text {
+            margin-top: 24px;
+        }
+
+        /* Services Grid - Modern Cards */
+        .services-showcase {
+            padding: 80px 20px;
+            background: #0f0f0f;
+        }
+
+        .services-wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .services-modern-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .service-modern-card {
+            position: relative;
+            background: #1a1a1a;
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            cursor: pointer;
+        }
+
+        .service-modern-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .service-card-image {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .service-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .service-modern-card:hover .service-card-image img {
+            transform: scale(1.1);
+        }
+
+        .service-card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, rgba(10, 10, 10, 0) 0%, rgba(10, 10, 10, 0.9) 100%);
+        }
+
+        .service-card-number {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.95);
+            color: #0a0a0a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 18px;
+            z-index: 2;
+        }
+
+        .service-card-content {
+            padding: 30px;
+        }
+
+        .service-card-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+
+        .service-card-description {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #a0a0a0;
+            margin-bottom: 20px;
+        }
+
+        .service-card-list {
+            list-style: none;
+            margin-bottom: 24px;
+        }
+
+        .service-card-list li {
+            padding: 8px 0;
+            padding-left: 24px;
+            position: relative;
+            font-size: 14px;
+            color: #b0b0b0;
+        }
+
+        .service-card-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        .service-card-footer {
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-btn {
+            background: none;
+            border: none;
+            color: #ffffff;
+            font-family: 'Urbanist', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: gap 0.3s ease;
+            text-decoration: none;
+        }
+
+        .contact-btn:hover {
+            gap: 12px;
+        }
+
+        .contact-btn svg {
+            transition: transform 0.3s ease;
+        }
+
+        .service-modern-card:hover .contact-btn svg {
+            transform: translateX(4px);
+        }
+
+        .highlight-text {
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        /* CTA Section */
+        .cta-immigration {
+            padding: 120px 20px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-immigration::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: moveGrid 20s linear infinite;
+        }
+
+        @keyframes moveGrid {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(50px, 50px);
+            }
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-immigration h2 {
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 800;
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .cta-immigration p {
+            font-size: 20px;
+            color: #b0b0b0;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 18px 40px;
+            background: #ffffff;
+            color: #0a0a0a;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-button:hover {
+            background: #f0f0f0;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+        }
+
+        .cta-button svg {
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover svg {
+            transform: translateX(4px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .services-modern-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
+
 <body>
     <!-- Sticky Navigation -->
     <nav class="nav-container nav-sticky visible">
         <div class="logo"><a href="index.html" style="color: white; text-decoration: none;">SA</a></div>
         <ul class="nav-menu">
             <li class="nav-item"><a href="index.html#home" class="nav-link"><span class="nav-text">Home</span></a></li>
-            <li class="nav-item"><a href="index.html#about" class="nav-link"><span class="nav-text">About us</span></a></li>
-            <li class="nav-item"><a href="index.html#whyus" class="nav-link"><span class="nav-text">Why Us</span></a></li>
-            <li class="nav-item"><a href="index.html#services" class="nav-link active"><span class="nav-text">Services</span></a></li>
-            <li class="nav-item"><a href="index.html#contact" class="nav-link"><span class="nav-text">Contact Us</span></a></li>
+            <li class="nav-item"><a href="index.html#about" class="nav-link"><span class="nav-text">About us</span></a>
+            </li>
+            <li class="nav-item"><a href="index.html#whyus" class="nav-link"><span class="nav-text">Why Us</span></a>
+            </li>
+            <li class="nav-item"><a href="index.html#services" class="nav-link active"><span
+                        class="nav-text">Services</span></a></li>
+            <li class="nav-item"><a href="index.html#contact" class="nav-link"><span class="nav-text">Contact
+                        Us</span></a></li>
         </ul>
-        <button class="btn-consultation"><span class="btn-text">Book Consultation</span></button>
+        <a href="index.html#contact" class="btn-consultation"><span class="btn-text">Book Consultation</span></a>
         <div class="mobile-menu-toggle">
             <span></span>
             <span></span>
@@ -30,145 +472,348 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="service-hero">
-        <div class="service-hero-content">
-            <h1 class="service-hero-title">Immigration Services</h1>
-            <p class="service-hero-subtitle">Expert immigration solutions for businesses and individuals</p>
+    <section class="immigration-hero">
+        <div class="hero-content-wrapper">
+            <div class="hero-badge">Immigration Excellence</div>
+            <h1>Immigration Services</h1>
+            <p>Removing barriers across borders with smooth, transparent support for permits, visas, and residence needs
+            </p>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">1000+</div>
+                <div class="stat-label">Permits Processed</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Countries Served</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">95%</div>
+                <div class="stat-label">Approval Rate</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Support Available</div>
+            </div>
         </div>
     </section>
 
     <!-- Introduction -->
-    <section class="service-intro">
-        <div class="wrapper">
-            <p class="intro-paragraph">
-                Immigration and tax regulations are becoming increasingly complex and interlinked and can no longer be addressed as independent disciplines. This is most evident in regulations affecting international travellers.
-            </p>
-            <p class="intro-paragraph">
-                Our immigration and legal experts conduct pre-travel assessments to organizations to effectively manage immigration requirements against the laws of Tanzania and take appropriate action to minimize potential consequences.
-            </p>
+    <section class="intro-section">
+        <div class="section-header">
+            <div class="section-subtitle">Our Expertise</div>
+            <h2 class="section-title">Seamless Immigration<br>Solutions</h2>
+        </div>
+        <p class="intro-text">
+            Immigration and tax regulations are becoming increasingly complex and interlinked and can no longer be
+            addressed as independent disciplines. This is most evident in regulations affecting international
+            travellers.
+        </p>
+        <p class="intro-text">
+            Our immigration and legal experts conduct pre-travel assessments to organizations to effectively manage
+            immigration requirements against the laws of Tanzania and take appropriate action to minimize potential
+            consequences.
+        </p>
+    </section>
+
+    <!-- Services Showcase -->
+    <section class="services-showcase">
+        <div class="services-wrapper">
+            <div class="section-header">
+                <div class="section-subtitle">What We Offer</div>
+                <h2 class="section-title">Comprehensive Immigration Support</h2>
+            </div>
+
+            <div class="services-modern-grid">
+                <!-- Work & Residence Permits -->
+                <div class="service-modern-card">
+                    <div class="service-card-image">
+                        <img src="https://images.unsplash.com/photo-1521791055366-0d553872125f?w=800&q=80"
+                            alt="Work & Residence Permits">
+                        <div class="service-card-overlay"></div>
+                        <div class="service-card-number">01</div>
+                    </div>
+                    <div class="service-card-content">
+                        <h3 class="service-card-title">Work & Residence Permit Applications</h3>
+                        <p class="service-card-description">
+                            Based on the Non-Citizens (Employment Regulation) Act 2015, we handle complete work permit
+                            (Class A, B or C) and residence permit applications with the Immigration Authority.
+                        </p>
+                        <ul class="service-card-list">
+                            <li>Compiling required information</li>
+                            <li>Application drafting & submission</li>
+                            <li>Timely follow-up with authorities</li>
+                            <li>Passport endorsement services</li>
+                            <li>Advisory on work permit matters</li>
+                        </ul>
+                        <div class="service-card-footer">
+                            <a href="index.html#contact" class="contact-btn">
+                                Contact Us
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Special & Dependents Pass -->
+                <div class="service-modern-card">
+                    <div class="service-card-image">
+                        <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?w=800&q=80"
+                            alt="Special & Dependents Pass">
+                        <div class="service-card-overlay"></div>
+                        <div class="service-card-number">02</div>
+                    </div>
+                    <div class="service-card-content">
+                        <h3 class="service-card-title">Special & Dependents Pass</h3>
+                        <p class="service-card-description">
+                            Complete assistance for special and dependents passes for family members of non-citizen
+                            investors and employees as per Immigration regulations.
+                        </p>
+                        <ul class="service-card-list">
+                            <li>Application to Ministry of Home Affairs</li>
+                            <li>Follow-up with Immigration authorities</li>
+                            <li>Ensuring timely approval</li>
+                            <li>Advisory on special pass matters</li>
+                        </ul>
+                        <p class="service-card-description">
+                            <span class="highlight-text">Eligible dependents:</span> Spouse and children under 18 years
+                            within a formal marriage.
+                        </p>
+                        <div class="service-card-footer">
+                            <a href="index.html#contact" class="contact-btn">
+                                Contact Us
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visa Applications -->
+                <div class="service-modern-card">
+                    <div class="service-card-image">
+                        <img src="https://ik.imagekit.io/abdullah0300/Law/passport-7564502_1280.jpg?updatedAt=1761064195073"
+                            alt="Visa Applications">
+                        <div class="service-card-overlay"></div>
+                        <div class="service-card-number">03</div>
+                    </div>
+                    <div class="service-card-content">
+                        <h3 class="service-card-title">Visa Applications</h3>
+                        <p class="service-card-description">
+                            We assist clients with compiling information required for various visa types to be obtained
+                            at arrival or at the assignee's home country.
+                        </p>
+                        <ul class="service-card-list">
+                            <li>Tourist & Business Visas</li>
+                            <li>Transit Visas</li>
+                            <li>Student Visas</li>
+                            <li>Multiple Entry Visas</li>
+                            <li>Visa on Arrival Support</li>
+                        </ul>
+                        <div class="service-card-footer">
+                            <a href="index.html#contact" class="contact-btn">
+                                Contact Us
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Professional Board Registration -->
+                <div class="service-modern-card">
+                    <div class="service-card-image">
+                        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80"
+                            alt="Professional Board Registration">
+                        <div class="service-card-overlay"></div>
+                        <div class="service-card-number">04</div>
+                    </div>
+                    <div class="service-card-content">
+                        <h3 class="service-card-title">Registration with Professional Boards</h3>
+                        <p class="service-card-description">
+                            Expert assistance with registration to various professional boards including NBAA, ERB, CRB,
+                            PSPTB, TLS, TRA, and more.
+                        </p>
+                        <ul class="service-card-list">
+                            <li>Collecting necessary documentation</li>
+                            <li>Drafting and submitting applications</li>
+                            <li>Follow-ups with professional boards</li>
+                            <li>Issue resolution for timely registration</li>
+                        </ul>
+                        <div class="service-card-footer">
+                            <a href="index.html#contact" class="contact-btn">
+                                Contact Us
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NIDA Registration -->
+                <div class="service-modern-card">
+                    <div class="service-card-image">
+                        <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&q=80"
+                            alt="NIDA Registration">
+                        <div class="service-card-overlay"></div>
+                        <div class="service-card-number">05</div>
+                    </div>
+                    <div class="service-card-content">
+                        <h3 class="service-card-title">NIDA Registration Processes</h3>
+                        <p class="service-card-description">
+                            Complete NIDA ID application and registration support for non-citizen employees working in
+                            Tanzania.
+                        </p>
+                        <ul class="service-card-list">
+                            <li>NIDA application form preparation</li>
+                            <li>Local government authority signatures</li>
+                            <li>Submission to NIDA offices</li>
+                            <li>Biometric scanning arrangements</li>
+                            <li>ID collection and delivery</li>
+                        </ul>
+                        <div class="service-card-footer">
+                            <a href="index.html#contact" class="contact-btn">
+                                Contact Us
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Immigration Returns -->
+                <div class="service-modern-card">
+                    <div class="service-card-image">
+                        <img src="https://images.unsplash.com/photo-1554224311-beee460ae6ba?w=800&q=80"
+                            alt="Immigration Returns">
+                        <div class="service-card-overlay"></div>
+                        <div class="service-card-number">06</div>
+                    </div>
+                    <div class="service-card-content">
+                        <h3 class="service-card-title">Immigration Return for Employment of Non-Citizens</h3>
+                        <p class="service-card-description">
+                            Annual return preparation and filing for employment of non-citizen employees before the
+                            deadline (31st March) to the Ministry of Home Affairs.
+                        </p>
+                        <ul class="service-card-list">
+                            <li>Information collection and compilation</li>
+                            <li>Return preparation and review</li>
+                            <li>Timely filing before deadline</li>
+                            <li>Compliance verification</li>
+                        </ul>
+                        <div class="service-card-footer">
+                            <a href="index.html#contact" class="contact-btn">
+                                Contact Us
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Labour Returns -->
+                <div class="service-modern-card">
+                    <div class="service-card-image">
+                        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&q=80"
+                            alt="Labour Returns">
+                        <div class="service-card-overlay"></div>
+                        <div class="service-card-number">07</div>
+                    </div>
+                    <div class="service-card-content">
+                        <h3 class="service-card-title">Bi-Annual Labour Returns</h3>
+                        <p class="service-card-description">
+                            Complete bi-annual return services for employment of non-citizen employees before deadlines
+                            (30th June & 31st December) to the Ministry of Labour.
+                        </p>
+                        <ul class="service-card-list">
+                            <li>Data collection and verification</li>
+                            <li>Return preparation and filing</li>
+                            <li>Deadline compliance management</li>
+                            <li>Ministry correspondence</li>
+                        </ul>
+                        <div class="service-card-footer">
+                            <a href="index.html#contact" class="contact-btn">
+                                Contact Us
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trainings & Seminars -->
+                <div class="service-modern-card">
+                    <div class="service-card-image">
+                        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80"
+                            alt="Trainings & Seminars">
+                        <div class="service-card-overlay"></div>
+                        <div class="service-card-number">08</div>
+                    </div>
+                    <div class="service-card-content">
+                        <h3 class="service-card-title">Trainings & Seminars</h3>
+                        <p class="service-card-description">
+                            Comprehensive training sessions and seminars on immigration regulations, compliance
+                            requirements, and best practices for managing cross-border assignments.
+                        </p>
+                        <ul class="service-card-list">
+                            <li>Immigration law updates</li>
+                            <li>Compliance best practices</li>
+                            <li>Cross-border assignment management</li>
+                            <li>HR team training programs</li>
+                            <li>Custom workshop development</li>
+                        </ul>
+                        <div class="service-card-footer">
+                            <a href="index.html#contact" class="contact-btn">
+                                Contact Us
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </section>
 
-    <!-- Services Grid -->
-    <section class="service-content">
-        <div class="wrapper">
-
-            <!-- Work and Residence Permits -->
-            <div class="service-box">
-                <div class="service-badge">01</div>
-                <h3 class="service-box-title">Work & Residence Permit Applications</h3>
-                <p class="service-box-text">
-                    Based on the Non-Citizens (Employment Regulation) Act 2015, a non-Tanzania citizen has to first apply to the Ministry of Labour for a work permit (Class A, B or C depending on the circumstances) and once approved, then apply for a residence permit with the Immigration Authority.
-                </p>
-
-                <h4 style="color: #904ce9; font-family: 'Urbanist', sans-serif; font-size: 20px; font-weight: 600; margin: 25px 0 15px;">Our Services Include:</h4>
-                <ul class="service-box-list">
-                    <li>Compiling information required for permit applications</li>
-                    <li>Drafting and submitting applications to authorities</li>
-                    <li>Following up to ensure permits are obtained on time</li>
-                    <li>Addressing any issues that may arise</li>
-                    <li>Endorsement of permits into passport</li>
-                    <li>Advisory on work permit matters</li>
-                </ul>
-            </div>
-
-            <!-- Special and Dependents Pass -->
-            <div class="service-box">
-                <div class="service-badge">02</div>
-                <h3 class="service-box-title">Special & Dependents Pass</h3>
-                <p class="service-box-text">
-                    We assist clients with compiling information required for application for special/dependents passes for the dependents to the non-citizens investors/employees as per the requirement of the Immigration regulations.
-                </p>
-                <ul class="service-box-list">
-                    <li>Application drafting and submission to Ministry of Home Affairs</li>
-                    <li>Follow-up with Immigration authorities</li>
-                    <li>Ensuring timely approval</li>
-                    <li>Advisory on special pass matters</li>
-                </ul>
-                <p class="service-box-text">
-                    <strong style="color: #904ce9;">Eligible dependents:</strong> Spouse and children under 18 years within a formal marriage.
-                </p>
-            </div>
-
-            <!-- Visa Applications -->
-            <div class="service-box">
-                <div class="service-badge">03</div>
-                <h3 class="service-box-title">Visa Applications</h3>
-                <p class="service-box-text">
-                    We assist clients with compiling information required for various visa types to be obtained at arrival or at the assignee's home country.
-                </p>
-            </div>
-
-            <!-- Professional Board Registration -->
-            <div class="service-box">
-                <div class="service-badge">04</div>
-                <h3 class="service-box-title">Registration with Professional Boards</h3>
-                <p class="service-box-text">
-                    We assist clients with registration to various professional boards including NBAA, ERB, CRB, PSPTB, TLS, TRA, etc.
-                </p>
-                <ul class="service-box-list">
-                    <li>Collecting all necessary information for registration</li>
-                    <li>Drafting and submitting applications</li>
-                    <li>Follow-ups with professional boards</li>
-                    <li>Addressing issues to ensure timely registration</li>
-                </ul>
-            </div>
-
-            <!-- NIDA Registration -->
-            <div class="service-box">
-                <div class="service-badge">05</div>
-                <h3 class="service-box-title">NIDA Registration Processes</h3>
-                <p class="service-box-text">
-                    We assist clients with NIDA ID application and registration processes for non-citizens employees.
-                </p>
-                <ul class="service-box-list">
-                    <li>Filling NIDA ID application forms</li>
-                    <li>Getting forms signed by local government authorities</li>
-                    <li>Submitting applications to relevant NIDA offices</li>
-                    <li>Arranging and escorting employees for biometric scanning</li>
-                    <li>Collecting IDs once available</li>
-                </ul>
-            </div>
-
-            <!-- Immigration Returns -->
-            <div class="service-box">
-                <div class="service-badge">06</div>
-                <h3 class="service-box-title">Immigration Return for Employment of Non-Citizens</h3>
-                <p class="service-box-text">
-                    We collect all necessary information and assist clients with preparation and filing of annual return for employment of non-citizens employees before the deadline (31st March) to the Ministry of Home Affairs (Immigration Division).
-                </p>
-            </div>
-
-            <!-- Labour Returns -->
-            <div class="service-box">
-                <div class="service-badge">07</div>
-                <h3 class="service-box-title">Bi-Annual Labour Returns</h3>
-                <p class="service-box-text">
-                    We collect all necessary information and assist clients with preparation and filing of bi-annual return for employment of non-citizens employees before deadlines (30th June & 31st December) to the Ministry of Labour.
-                </p>
-            </div>
-
-            <!-- Trainings/Seminars -->
-            <div class="service-box">
-                <div class="service-badge">08</div>
-                <h3 class="service-box-title">Trainings & Seminars</h3>
-                <p class="service-box-text">
-                    We provide comprehensive training sessions and seminars on immigration regulations, compliance requirements, and best practices for managing cross-border assignments.
-                </p>
-            </div>
-
+    <!-- CTA Section -->
+    <section class="cta-immigration">
+        <div class="cta-content">
+            <h2>Need Immigration Assistance?</h2>
+            <p>Our immigration experts are here to support your needs every step of the way with transparent, efficient
+                service.</p>
+            <a href="index.html#contact" class="cta-button">
+                Contact Us Today
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+            </a>
         </div>
     </section>
 
-    <!-- Call to Action -->
-    <section class="service-cta">
-        <div class="wrapper">
-            <h2 class="cta-heading">Need Immigration Assistance?</h2>
-            <p class="cta-subheading">Our immigration experts are here to support your needs every step of the way</p>
-            <a href="index.html#contact" class="cta-btn">Contact Us Today</a>
-        </div>
-    </section>
- <!-- Footer Section -->
+    <!-- Footer Section -->
     <footer class="footer-section">
         <div class="footer-top">
             <div class="footer-container">
@@ -176,9 +821,11 @@
                 <div class="footer-column footer-about">
                     <h2 class="footer-logo">Serena Attorneys</h2>
                     <p class="footer-tagline">Legal, Tax & Immigration Consultants</p>
-                    
+
                     <p class="footer-description">
-                        Founded in Tanzania in 2012, Serena Attorneys is a national law firm with 15 personnel including 10 lawyers. With our legal and tax practice, compliance is key. We help companies meet today's business goals while laying the groundwork for tomorrow's success.
+                        Founded in Tanzania in 2012, Serena Attorneys is a national law firm with 15 personnel including
+                        10 lawyers. With our legal and tax practice, compliance is key. We help companies meet today's
+                        business goals while laying the groundwork for tomorrow's success.
                     </p>
                 </div>
 
@@ -186,10 +833,10 @@
                 <div class="footer-column footer-links-col">
                     <h3 class="footer-heading">Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#contact">Contact Us</a></li>
                     </ul>
                 </div>
 
@@ -198,21 +845,28 @@
                     <h3 class="footer-heading">Contact</h3>
                     <div class="footer-contact">
                         <div class="footer-contact-item">
-                            <svg class="footer-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <svg class="footer-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                                 <circle cx="12" cy="10" r="3"></circle>
                             </svg>
-                            <span>Ground Floor, Kilwa House,<br>369-Toure Drive, Oyster-Bay,<br>Dar es Salaam, Tanzania</span>
+                            <span>Ground Floor, Kilwa House,<br>369-Toure Drive, Oyster-Bay,<br>Dar es Salaam,
+                                Tanzania</span>
                         </div>
                         <div class="footer-contact-item">
-                            <svg class="footer-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            <svg class="footer-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                </path>
                             </svg>
                             <a href="tel:+255712000360">+255 (0) 712 000 360</a>
                         </div>
                         <div class="footer-contact-item">
-                            <svg class="footer-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <svg class="footer-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                </path>
                                 <polyline points="22,6 12,13 2,6"></polyline>
                             </svg>
                             <a href="mailto:alex@serenaconsultants.com">alex@serenaconsultants.com</a>
@@ -223,19 +877,25 @@
                     <div class="footer-social-wrapper">
                         <h4 class="footer-social-heading">Follow Us</h4>
                         <div class="footer-social">
-                            <a href="https://www.linkedin.com/company/serena-consultants" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
+                            <a href="https://www.linkedin.com/company/serena-consultants" target="_blank"
+                                rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                                    <path
+                                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                                 </svg>
                             </a>
-                            <a href="https://www.facebook.com/serenaconsultants" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook">
+                            <a href="https://www.facebook.com/serenaconsultants" target="_blank"
+                                rel="noopener noreferrer" class="social-icon" aria-label="Facebook">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
+                                    <path
+                                        d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
                                 </svg>
                             </a>
-                            <a href="https://wa.me/255712000360" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="WhatsApp">
+                            <a href="https://wa.me/255712000360" target="_blank" rel="noopener noreferrer"
+                                class="social-icon" aria-label="WhatsApp">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                                    <path
+                                        d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
                                 </svg>
                             </a>
                         </div>
@@ -251,9 +911,7 @@
                     &copy; 2025 Serena Attorneys. All rights reserved.
                 </p>
                 <div class="footer-legal">
-                    <a href="#privacy">Privacy Policy</a>
-                    <span class="separator">|</span>
-                    <a href="#terms">Terms of Service</a>
+
                     <span class="separator">|</span>
                     <a href="https://webcraftio.com" target="_blank" rel="noopener noreferrer" class="webcraftio-link">
                         Designed & Created by WebCraftio
@@ -262,7 +920,9 @@
             </div>
         </div>
     </footer>
+
     <script src="script.js"></script>
     <script src="service-pages.js"></script>
 </body>
+
 </html>

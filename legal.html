@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,20 +9,485 @@
     <link rel="stylesheet" href="service-pages.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&family=Poppins:wght@400&family=Source+Serif+Pro:wght@400&family=DM+Sans:wght@400&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&family=Poppins:wght@400&family=Source+Serif+Pro:wght@400&family=DM+Sans:wght@400&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Modern Legal Page Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Urbanist', sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Enhanced Hero Section */
+        .legal-hero {
+            position: relative;
+            height: 70vh;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+        }
+
+        .legal-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://ik.imagekit.io/abdullah0300/Law/inaki-del-olmo-NIJuEQw0RKg-unsplash%20(1).jpg?updatedAt=1761064196882') center/cover no-repeat;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .legal-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, rgba(10, 10, 10, 0.3) 0%, rgba(10, 10, 10, 0.9) 100%);
+            z-index: 1;
+        }
+
+        .hero-content-wrapper {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 0 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 8px 24px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        .legal-hero h1 {
+            font-size: clamp(42px, 6vw, 72px);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .legal-hero p {
+            font-size: clamp(18px, 2vw, 22px);
+            color: #d0d0d0;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: #0f0f0f;
+            padding: 80px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffffff 0%, #888888 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 16px;
+            color: #a0a0a0;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        /* Introduction Section */
+        .intro-section {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-subtitle {
+            font-size: 14px;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 24px;
+        }
+
+        .intro-text {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #c0c0c0;
+            text-align: center;
+        }
+
+        .intro-text+.intro-text {
+            margin-top: 24px;
+        }
+
+        /* Services Grid - Modern Cards */
+        .services-showcase {
+            padding: 80px 20px;
+            background: #0f0f0f;
+        }
+
+        .services-wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .services-modern-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .service-modern-card {
+            position: relative;
+            background: #1a1a1a;
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            cursor: pointer;
+        }
+
+        .service-modern-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .service-card-image {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .service-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .service-modern-card:hover .service-card-image img {
+            transform: scale(1.1);
+        }
+
+        .service-card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, rgba(10, 10, 10, 0) 0%, rgba(10, 10, 10, 0.9) 100%);
+        }
+
+        .service-card-number {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.95);
+            color: #0a0a0a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 18px;
+            z-index: 2;
+        }
+
+        .service-card-content {
+            padding: 30px;
+        }
+
+        .service-card-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+
+        .service-card-description {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #a0a0a0;
+            margin-bottom: 20px;
+        }
+
+        .service-card-list {
+            list-style: none;
+            margin-bottom: 24px;
+        }
+
+        .service-card-list li {
+            padding: 8px 0;
+            padding-left: 24px;
+            position: relative;
+            font-size: 14px;
+            color: #b0b0b0;
+        }
+
+        .service-card-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        .service-card-footer {
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .expand-btn {
+            background: none;
+            border: none;
+            color: #ffffff;
+            font-family: 'Urbanist', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: gap 0.3s ease;
+            text-decoration: none;
+        }
+
+        .expand-btn:hover {
+            gap: 12px;
+        }
+
+        .expand-btn svg {
+            transition: transform 0.3s ease;
+        }
+
+        .service-modern-card:hover .expand-btn svg {
+            transform: translateX(4px);
+        }
+
+        /* Featured Service - Full Width */
+        .featured-service {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, #1f1f1f 0%, #0f0f0f 100%);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .featured-service .service-card-content {
+            padding: 50px;
+        }
+
+        .featured-badge {
+            display: inline-block;
+            padding: 6px 16px;
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            color: #ffd700;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        /* CTA Section */
+        .cta-legal {
+            padding: 120px 20px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-legal::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: moveGrid 20s linear infinite;
+        }
+
+        @keyframes moveGrid {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(50px, 50px);
+            }
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-legal h2 {
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 800;
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .cta-legal p {
+            font-size: 20px;
+            color: #b0b0b0;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 18px 40px;
+            background: #ffffff;
+            color: #0a0a0a;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-button:hover {
+            background: #f0f0f0;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+        }
+
+        .cta-button svg {
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover svg {
+            transform: translateX(4px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .services-modern-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-service .service-card-content {
+                padding: 30px;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
+
 <body>
     <!-- Sticky Navigation -->
     <nav class="nav-container nav-sticky visible">
         <div class="logo"><a href="index.html" style="color: white; text-decoration: none;">SA</a></div>
         <ul class="nav-menu">
             <li class="nav-item"><a href="index.html#home" class="nav-link"><span class="nav-text">Home</span></a></li>
-            <li class="nav-item"><a href="index.html#about" class="nav-link"><span class="nav-text">About us</span></a></li>
-            <li class="nav-item"><a href="index.html#whyus" class="nav-link"><span class="nav-text">Why Us</span></a></li>
-            <li class="nav-item"><a href="index.html#services" class="nav-link active"><span class="nav-text">Services</span></a></li>
-            <li class="nav-item"><a href="index.html#contact" class="nav-link"><span class="nav-text">Contact Us</span></a></li>
+            <li class="nav-item"><a href="index.html#about" class="nav-link"><span class="nav-text">About us</span></a>
+            </li>
+            <li class="nav-item"><a href="index.html#whyus" class="nav-link"><span class="nav-text">Why Us</span></a>
+            </li>
+            <li class="nav-item"><a href="index.html#services" class="nav-link active"><span
+                        class="nav-text">Services</span></a></li>
+            <li class="nav-item"><a href="index.html#contact" class="nav-link"><span class="nav-text">Contact
+                        Us</span></a></li>
         </ul>
-        <button class="btn-consultation"><span class="btn-text">Book Consultation</span></button>
+        <a href="index.html#contact" class="btn-consultation"><span class="btn-text">Book Consultation</span></a>
         <div class="mobile-menu-toggle">
             <span></span>
             <span></span>
@@ -30,212 +496,434 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="service-hero">
-        <div class="service-hero-content">
-            <h1 class="service-hero-title">Legal Services</h1>
-            <p class="service-hero-subtitle">Comprehensive legal solutions for businesses and individuals</p>
+    <section class="legal-hero">
+        <div class="hero-content-wrapper">
+            <div class="hero-badge">Legal Excellence</div>
+            <h1>Legal Services</h1>
+            <p>Comprehensive legal solutions designed to protect your rights and drive your business forward with
+                confidence</p>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">10+</div>
+                <div class="stat-label">Expert Lawyers</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Cases Handled</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">98%</div>
+                <div class="stat-label">Success Rate</div>
+            </div>
         </div>
     </section>
 
     <!-- Introduction -->
-    <section class="service-intro">
-        <div class="wrapper">
-            <p class="intro-paragraph">
-                Our lawyers and consultants understand the increasingly complex legal, regulatory and commercial risks of the economy and provide holistic guidance around strategic decisions that meets the needs of today's business.
-            </p>
-            <p class="intro-paragraph">
-                We pride ourselves with our lawyers with various backgrounds who provide integrated and comprehensive pertinent services our clients can trust. We service local and foreign multinational companies in different sectors on a wide variety of legal matters.
-            </p>
+    <section class="intro-section">
+        <div class="section-header">
+            <div class="section-subtitle">Our Expertise</div>
+            <h2 class="section-title">Legal Excellence<br>You Can Trust</h2>
+        </div>
+        <p class="intro-text">
+            Our lawyers and consultants understand the increasingly complex legal, regulatory and commercial risks of
+            the economy and provide holistic guidance around strategic decisions that meets the needs of today's
+            business.
+        </p>
+        <p class="intro-text">
+            We pride ourselves with our lawyers with various backgrounds who provide integrated and comprehensive
+            pertinent services our clients can trust. We service local and foreign multinational companies in different
+            sectors on a wide variety of legal matters.
+        </p>
+    </section>
+
+    <!-- Services Showcase -->
+    <section class="services-showcase">
+        <div class="services-wrapper">
+            <div class="section-header">
+                <div class="section-subtitle">What We Offer</div>
+                <h2 class="section-title">Comprehensive Legal Solutions</h2>
+            </div>
+
+            <div class="services-modern-grid">
+                <!-- Banking & Finance -->
+                <div class="service-modern-card">
+                    <div class="service-card-image">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80"
+                            alt="Banking & Finance">
+                        <div class="service-card-overlay"></div>
+                        <div class="service-card-number">01</div>
+                    </div>
+                    <div class="service-card-content">
+                        <h3 class="service-card-title">Banking & Finance</h3>
+                        <p class="service-card-description">
+                            Navigate complex financial regulations with confidence. Our expertise spans acquisition
+                            finance, project finance, restructuring, and financial services regulation.
+                        </p>
+                        <ul class="service-card-list">
+                            <li>Acquisition & Project Finance</li>
+                            <li>Financial Services Regulation</li>
+                            <li>Restructuring & Insolvency</li>
+                            <li>Trade & Export Finance</li>
+                        </ul>
+                        <div class="service-card-footer">
+                            <a href="index.html#contact" class="expand-btn">
+                                Contact Us
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Capital Markets -->
+                <div class="service-modern-card">
+                    <div class="service-card-image">
+                        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&q=80"
+                            alt="Capital Markets">
+                        <div class="service-card-overlay"></div>
+                        <div class="service-card-number">02</div>
+                    </div>
+                    <div class="service-card-content">
+                        <h3 class="service-card-title">Capital Markets</h3>
+                        <p class="service-card-description">
+                            Practical, commercially-focused advice to maximize deal certainty in equity and debt
+                            transactions.
+                        </p>
+                        <ul class="service-card-list">
+                            <li>Domestic & Cross-border IPOs</li>
+                            <li>Equity Transactions</li>
+                            <li>Debt Offerings</li>
+                            <li>Securities Regulation</li>
+                        </ul>
+                        <div class="service-card-footer">
+                            <a href="index.html#contact" class="expand-btn">
+                                Contact Us
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Company & Commercial Law -->
+                <div class="service-modern-card">
+                    <div class="service-card-image">
+                        <img src="https://ik.imagekit.io/abdullah0300/Law/inaki-del-olmo-NIJuEQw0RKg-unsplash%20(1).jpg?updatedAt=1761064196882"
+                            alt="Company & Commercial Law">
+                        <div class="service-card-overlay"></div>
+                        <div class="service-card-number">03</div>
+                    </div>
+                    <div class="service-card-content">
+                        <h3 class="service-card-title">Company & Commercial Law</h3>
+                        <p class="service-card-description">
+                            Manage regulatory risks and operate with confidence across jurisdictions with our
+                            comprehensive corporate support.
+                        </p>
+                        <ul class="service-card-list">
+                            <li>Corporate Establishment & Operations</li>
+                            <li>Commercial Contracts</li>
+                            <li>M&A and Joint Ventures</li>
+                            <li>Corporate Governance</li>
+                        </ul>
+                        <div class="service-card-footer">
+                            <a href="index.html#contact" class="expand-btn">
+                                Contact Us
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dispute Resolution -->
+                <div class="service-modern-card">
+                    <div class="service-card-image">
+                        <img src="https://ik.imagekit.io/abdullah0300/Law/right-4703934_1280.jpg?updatedAt=1761064455911"
+                            alt="Dispute Resolution">
+                        <div class="service-card-overlay"></div>
+                        <div class="service-card-number">04</div>
+                    </div>
+                    <div class="service-card-content">
+                        <h3 class="service-card-title">Dispute Resolution</h3>
+                        <p class="service-card-description">
+                            Strategic guidance through disputes with expertise in litigation, arbitration, and
+                            alternative resolution methods.
+                        </p>
+                        <ul class="service-card-list">
+                            <li>Litigation & Court Representation</li>
+                            <li>International Arbitration</li>
+                            <li>Alternative Dispute Resolution</li>
+                            <li>Pre-contentious Negotiations</li>
+                        </ul>
+                        <div class="service-card-footer">
+                            <a href="index.html#contact" class="expand-btn">
+                                Contact Us
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Employment & Compensation -->
+                <div class="service-modern-card">
+                    <div class="service-card-image">
+                        <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&q=80"
+                            alt="Employment & Compensation">
+                        <div class="service-card-overlay"></div>
+                        <div class="service-card-number">05</div>
+                    </div>
+                    <div class="service-card-content">
+                        <h3 class="service-card-title">Employment & Compensation</h3>
+                        <p class="service-card-description">
+                            Strategic people-related legal advice for compliance, restructuring, and business
+                            transformation.
+                        </p>
+                        <ul class="service-card-list">
+                            <li>Employment Contracts</li>
+                            <li>Workforce Restructuring</li>
+                            <li>Employee Handbooks & Policies</li>
+                            <li>Dispute Resolution</li>
+                        </ul>
+                        <div class="service-card-footer">
+                            <a href="index.html#contact" class="expand-btn">
+                                Contact Us
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Private Equity -->
+                <div class="service-modern-card">
+                    <div class="service-card-image">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
+                            alt="Private Equity">
+                        <div class="service-card-overlay"></div>
+                        <div class="service-card-number">06</div>
+                    </div>
+                    <div class="service-card-content">
+                        <h3 class="service-card-title">Private Equity</h3>
+                        <p class="service-card-description">
+                            Deep industry expertise to help investors secure the right deals with optimal terms and
+                            minimized risk.
+                        </p>
+                        <ul class="service-card-list">
+                            <li>Fund Formation</li>
+                            <li>Acquisitions & Add-ons</li>
+                            <li>Portfolio Company Management</li>
+                            <li>Restructuring & Exits</li>
+                        </ul>
+                        <div class="service-card-footer">
+                            <a href="index.html#contact" class="expand-btn">
+                                Contact Us
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Real Estate -->
+                <div class="service-modern-card">
+                    <div class="service-card-image">
+                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80"
+                            alt="Real Estate">
+                        <div class="service-card-overlay"></div>
+                        <div class="service-card-number">07</div>
+                    </div>
+                    <div class="service-card-content">
+                        <h3 class="service-card-title">Real Estate & Property</h3>
+                        <p class="service-card-description">
+                            Comprehensive real estate support for investors, developers, and businesses managing
+                            property portfolios.
+                        </p>
+                        <ul class="service-card-list">
+                            <li>Property Transactions</li>
+                            <li>Leasing & Financing</li>
+                            <li>Construction Projects</li>
+                            <li>Real Estate Development</li>
+                        </ul>
+                        <div class="service-card-footer">
+                            <a href="index.html#contact" class="expand-btn">
+                                Contact Us
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tax -->
+                <div class="service-modern-card">
+                    <div class="service-card-image">
+                        <img src="https://ik.imagekit.io/abdullah0300/Law/kelly-sikkema-wgcUx0kR1ps-unsplash.jpg?updatedAt=1761064195972"
+                            alt="Tax Services">
+                        <div class="service-card-overlay"></div>
+                        <div class="service-card-number">08</div>
+                    </div>
+                    <div class="service-card-content">
+                        <h3 class="service-card-title">Tax</h3>
+                        <p class="service-card-description">
+                            Strategic tax advisory to align your tax function with business operations and manage
+                            enterprise risk.
+                        </p>
+                        <ul class="service-card-list">
+                            <li>Tax Compliance & Advisory</li>
+                            <li>Corporate Income Tax & VAT</li>
+                            <li>Transfer Pricing</li>
+                            <li>TRA Audit Support</li>
+                        </ul>
+                        <div class="service-card-footer">
+                            <a href="tax.html" class="expand-btn">
+                                Explore Tax Services
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- M&A -->
+                <div class="service-modern-card">
+                    <div class="service-card-image">
+                        <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&q=80"
+                            alt="Mergers & Acquisitions">
+                        <div class="service-card-overlay"></div>
+                        <div class="service-card-number">09</div>
+                    </div>
+                    <div class="service-card-content">
+                        <h3 class="service-card-title">Mergers & Acquisitions</h3>
+                        <p class="service-card-description">
+                            Convert strategic vision into reality with comprehensive M&A support from structuring to
+                            completion.
+                        </p>
+                        <ul class="service-card-list">
+                            <li>Transaction Structuring</li>
+                            <li>Due Diligence</li>
+                            <li>Share & Asset Purchases</li>
+                            <li>Joint Venture Agreements</li>
+                        </ul>
+                        <div class="service-card-footer">
+                            <a href="index.html#contact" class="expand-btn">
+                                Contact Us
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technology & IP -->
+                <div class="service-modern-card">
+                    <div class="service-card-image">
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80"
+                            alt="Technology & IP">
+                        <div class="service-card-overlay"></div>
+                        <div class="service-card-number">10</div>
+                    </div>
+                    <div class="service-card-content">
+                        <h3 class="service-card-title">Technology, Media & Telecommunications</h3>
+                        <p class="service-card-description">
+                            Navigate digital transformation with expert guidance on IP protection, data privacy, and
+                            tech regulations.
+                        </p>
+                        <ul class="service-card-list">
+                            <li>Intellectual Property Protection</li>
+                            <li>Data Privacy & Protection</li>
+                            <li>E-commerce Legal Framework</li>
+                            <li>Software Licensing</li>
+                        </ul>
+                        <div class="service-card-footer">
+                            <a href="index.html#contact" class="expand-btn">
+                                Contact Us
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Featured Service - Tax & Legal Aid -->
+                <div class="service-modern-card featured-service">
+                    <div class="service-card-content">
+                        <span class="featured-badge">Pro Bono Initiative</span>
+                        <h3 class="service-card-title">Serena Tax & Legal Aid - Bridging the Compliance Gap</h3>
+                        <p class="service-card-description">
+                            Making professional legal and tax services accessible to those who need them most. Our Tax &
+                            Legal Aid Team provides free, independent advice and representation to individuals on low
+                            incomes facing tax and legal difficulties.
+                        </p>
+                        <ul class="service-card-list">
+                            <li>Free Legal & Tax Advice for Low-Income Individuals</li>
+                            <li>Support for Unrepresented Taxpayers</li>
+                            <li>National Helpline & Face-to-Face Services</li>
+                            <li>Business Formalization Assistance</li>
+                            <li>Tax Compliance Guidance</li>
+                            <li>Community Outreach Programs</li>
+                        </ul>
+                        <div class="service-card-footer">
+                            <a href="index.html#contact" class="expand-btn">
+                                Contact Us
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </section>
 
-    <!-- Services Grid -->
-    <section class="service-content">
-        <div class="wrapper">
-
-            <!-- Banking & Finance -->
-            <div class="service-box">
-                <div class="service-badge">01</div>
-                <h3 class="service-box-title">Banking & Finance</h3>
-                <p class="service-box-text">
-                    Today's lenders and borrowers face countless challenges, including increasing complexity of financial services regulation across the world. Our lawyers are particularly noted for their proficiency in acquisition finance, project finance, restructuring and insolvency, financial services regulation, structured finance, trade and export finance, real estate finance and securitization.
-                </p>
-            </div>
-
-            <!-- Capital Markets -->
-            <div class="service-box">
-                <div class="service-badge">02</div>
-                <h3 class="service-box-title">Capital Markets</h3>
-                <p class="service-box-text">
-                    Our lawyers are known for providing practical, commercially-focused advice to maximize deal certainty. We represent issuers, investment banks, and selling shareholders in equity and debt transactions including domestic and cross-border IPOs.
-                </p>
-            </div>
-
-            <!-- Company & Commercial Law -->
-            <div class="service-box">
-                <div class="service-badge">03</div>
-                <h3 class="service-box-title">Company & Commercial Law</h3>
-                <p class="service-box-text">
-                    Our lawyers assist companies manage regulatory risks, enabling our clients to operate with confidence across jurisdictions, making the most of today's new business opportunities.
-                </p>
-                <ul class="service-box-list">
-                    <li>Corporate establishment and operation support</li>
-                    <li>Commercial contracts for day-to-day and strategic activities</li>
-                    <li>Corporate reorganizations including M&A and joint ventures</li>
-                    <li>Corporate governance and compliance</li>
-                    <li>Company formation, regulation and disclosure</li>
-                    <li>Insolvency, winding up and dissolution</li>
-                </ul>
-            </div>
-
-            <!-- Dispute Resolution -->
-            <div class="service-box">
-                <div class="service-badge">04</div>
-                <h3 class="service-box-title">Dispute Resolution</h3>
-                <p class="service-box-text">
-                    We help clients through the lifecycle of transactions and product development to minimize exposure to risk and avoid disputes. When disputes arise, we guide clients through pre-contentious negotiations and help them choose the best dispute resolution option.
-                </p>
-                <ul class="service-box-list">
-                    <li>Litigation and court representation</li>
-                    <li>International arbitration</li>
-                    <li>Alternative dispute resolution</li>
-                    <li>Pre-contentious negotiations</li>
-                </ul>
-                <p class="service-box-text">
-                    We have extensive industry expertise, particularly in international trade, oil and gas, construction, mining, transactions, cybersecurity, consumer products and retail, pharmaceuticals and life sciences sectors.
-                </p>
-            </div>
-
-            <!-- Employment & Compensation -->
-            <div class="service-box">
-                <div class="service-badge">05</div>
-                <h3 class="service-box-title">Employment & Compensation</h3>
-                <p class="service-box-text">
-                    Our client businesses require access to legal advice that both advises on compliance responsibilities and informs on strategic planning. We provide assistance across every stage of growth, helping our clients to manage the people-related legal aspects of restructuring, mergers, takeovers and all types of business transformation.
-                </p>
-                <ul class="service-box-list">
-                    <li>Hiring and termination of employees</li>
-                    <li>Employment contracts drafting</li>
-                    <li>Codes of conduct and employee handbooks</li>
-                    <li>Due diligence and deal negotiation</li>
-                    <li>Employee transfers and trade unions</li>
-                    <li>Dispute resolution and settlements</li>
-                </ul>
-            </div>
-
-            <!-- Private Equity -->
-            <div class="service-box">
-                <div class="service-badge">06</div>
-                <h3 class="service-box-title">Private Equity</h3>
-                <p class="service-box-text">
-                    From forming funds to structuring investments, adapting to regulations and addressing volatility in local markets, our in-depth knowledge of market trends and deep industry expertise helps investors secure the right deals with the right terms to minimize risk and build portfolio value.
-                </p>
-                <ul class="service-box-list">
-                    <li>Fund formation</li>
-                    <li>Acquisitions and add-ons</li>
-                    <li>Refinancing</li>
-                    <li>Portfolio company management</li>
-                    <li>Restructuring exits</li>
-                </ul>
-            </div>
-
-            <!-- Real Estate -->
-            <div class="service-box">
-                <div class="service-badge">07</div>
-                <h3 class="service-box-title">Real Estate & Property</h3>
-                <p class="service-box-text">
-                    Evolving regulatory requirements in key real estate markets and rapidly changing economic environments have made it more challenging for companies and other investors to manage their real estate portfolios. We assist institutional and private equity investors, multinationals, banks, hotels and REITS with all of their real estate needs.
-                </p>
-                <ul class="service-box-list">
-                    <li>Buying, selling and leasing property</li>
-                    <li>Property financing</li>
-                    <li>Construction of major projects</li>
-                    <li>Corporate real estate services</li>
-                    <li>Real estate development and management</li>
-                </ul>
-            </div>
-
-            <!-- Tax -->
-            <div class="service-box">
-                <div class="service-badge">08</div>
-                <h3 class="service-box-title">Tax</h3>
-                <p class="service-box-text">
-                    Our tax advisory professionals can assist companies to align their tax function with their business operations and strategy, transaction planning and support, and enterprise risk management activities.
-                </p>
-                <ul class="service-box-list">
-                    <li>Tax compliance and advisory services</li>
-                    <li>Corporate income tax, VAT, customs duty</li>
-                    <li>Withholding tax and transfer pricing</li>
-                    <li>TRA audit support and appeals</li>
-                    <li>Compliance audits and investigations</li>
-                </ul>
-                <a href="tax.html" class="service-box-link">Explore Tax Services →</a>
-            </div>
-
-            <!-- Transaction Law/M&A -->
-            <div class="service-box">
-                <div class="service-badge">09</div>
-                <h3 class="service-box-title">Transaction Law / Mergers & Acquisitions</h3>
-                <p class="service-box-text">
-                    Our comprehensive range of legal services help our clients reach transaction goals quickly, efficiently and with added value. We help to convert strategic vision into reality and support deals to run smoothly.
-                </p>
-                <ul class="service-box-list">
-                    <li>Transaction structuring and negotiation</li>
-                    <li>Buy and sell side due diligence</li>
-                    <li>Share and asset purchase agreements</li>
-                    <li>Investment and shareholders agreements</li>
-                    <li>Joint venture agreements</li>
-                    <li>Competition law clearance</li>
-                    <li>Post-transaction reorganizations</li>
-                </ul>
-            </div>
-
-            <!-- Technology, Media & Telecommunications -->
-            <div class="service-box">
-                <div class="service-badge">10</div>
-                <h3 class="service-box-title">Technology, Media & Telecommunications</h3>
-                <p class="service-box-text">
-                    Digitization is transforming the legal and contractual relationships between businesses, individuals and governments. Our digital legal team helps clients identify digital risk areas and meet the legal challenges in those areas.
-                </p>
-                <ul class="service-box-list">
-                    <li>Intellectual property protection</li>
-                    <li>Data privacy and protection</li>
-                    <li>Licensing and collaboration agreements</li>
-                    <li>E-commerce legal framework</li>
-                    <li>Digital signatures and online contracting</li>
-                    <li>Software licenses and R&D agreements</li>
-                </ul>
-            </div>
-
-            <!-- Tax & Legal Aid -->
-            <div class="service-box service-box-highlight">
-                <div class="service-badge">11</div>
-                <h3 class="service-box-title">Serena Tax & Legal Aid - Bridging the Compliance Gap</h3>
-                <p class="service-box-text">
-                    Serena Tax & Legal Aid Team helps people on low incomes when they get into difficulties with their tax and legal affairs. Through pro bono work, our team makes their skills and talents available to those who cannot afford legal and tax representation.
-                </p>
-                <ul class="service-box-list">
-                    <li>Free, independent advice for low-income individuals</li>
-                    <li>Support for unrepresented taxpayers</li>
-                    <li>National helpline and face-to-face services</li>
-                    <li>Business formalization assistance</li>
-                    <li>Tax compliance guidance</li>
-                </ul>
-            </div>
-
+    <!-- CTA Section -->
+    <section class="cta-legal">
+        <div class="cta-content">
+            <h2>Need Legal Assistance?</h2>
+            <p>Our team of experienced lawyers is ready to help you navigate your legal challenges with precision and
+                care.</p>
+            <a href="index.html#contact" class="cta-button">
+                Contact Us Today
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+            </a>
         </div>
     </section>
 
-
-    <!-- Call to Action -->
-    <section class="service-cta">
-        <div class="wrapper">
-            <h2 class="cta-heading">Need Legal Assistance?</h2>
-            <p class="cta-subheading">Our team of experienced lawyers is ready to help you navigate your legal challenges</p>
-            <a href="index.html#contact" class="cta-btn">Contact Us Today</a>
-        </div>
-    </section>
-     <!-- Footer Section -->
+    <!-- Footer Section -->
     <footer class="footer-section">
         <div class="footer-top">
             <div class="footer-container">
@@ -243,9 +931,11 @@
                 <div class="footer-column footer-about">
                     <h2 class="footer-logo">Serena Attorneys</h2>
                     <p class="footer-tagline">Legal, Tax & Immigration Consultants</p>
-                    
+
                     <p class="footer-description">
-                        Founded in Tanzania in 2012, Serena Attorneys is a national law firm with 15 personnel including 10 lawyers. With our legal and tax practice, compliance is key. We help companies meet today's business goals while laying the groundwork for tomorrow's success.
+                        Founded in Tanzania in 2012, Serena Attorneys is a national law firm with 15 personnel including
+                        10 lawyers. With our legal and tax practice, compliance is key. We help companies meet today's
+                        business goals while laying the groundwork for tomorrow's success.
                     </p>
                 </div>
 
@@ -253,10 +943,10 @@
                 <div class="footer-column footer-links-col">
                     <h3 class="footer-heading">Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#contact">Contact Us</a></li>
                     </ul>
                 </div>
 
@@ -265,21 +955,28 @@
                     <h3 class="footer-heading">Contact</h3>
                     <div class="footer-contact">
                         <div class="footer-contact-item">
-                            <svg class="footer-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <svg class="footer-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                                 <circle cx="12" cy="10" r="3"></circle>
                             </svg>
-                            <span>Ground Floor, Kilwa House,<br>369-Toure Drive, Oyster-Bay,<br>Dar es Salaam, Tanzania</span>
+                            <span>Ground Floor, Kilwa House,<br>369-Toure Drive, Oyster-Bay,<br>Dar es Salaam,
+                                Tanzania</span>
                         </div>
                         <div class="footer-contact-item">
-                            <svg class="footer-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            <svg class="footer-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                </path>
                             </svg>
                             <a href="tel:+255712000360">+255 (0) 712 000 360</a>
                         </div>
                         <div class="footer-contact-item">
-                            <svg class="footer-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <svg class="footer-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                </path>
                                 <polyline points="22,6 12,13 2,6"></polyline>
                             </svg>
                             <a href="mailto:alex@serenaconsultants.com">alex@serenaconsultants.com</a>
@@ -290,19 +987,25 @@
                     <div class="footer-social-wrapper">
                         <h4 class="footer-social-heading">Follow Us</h4>
                         <div class="footer-social">
-                            <a href="https://www.linkedin.com/company/serena-consultants" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
+                            <a href="https://www.linkedin.com/company/serena-consultants" target="_blank"
+                                rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                                    <path
+                                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                                 </svg>
                             </a>
-                            <a href="https://www.facebook.com/serenaconsultants" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook">
+                            <a href="https://www.facebook.com/serenaconsultants" target="_blank"
+                                rel="noopener noreferrer" class="social-icon" aria-label="Facebook">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
+                                    <path
+                                        d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
                                 </svg>
                             </a>
-                            <a href="https://wa.me/255712000360" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="WhatsApp">
+                            <a href="https://wa.me/255712000360" target="_blank" rel="noopener noreferrer"
+                                class="social-icon" aria-label="WhatsApp">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                                    <path
+                                        d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
                                 </svg>
                             </a>
                         </div>
@@ -318,9 +1021,7 @@
                     &copy; 2025 Serena Attorneys. All rights reserved.
                 </p>
                 <div class="footer-legal">
-                    <a href="#privacy">Privacy Policy</a>
-                    <span class="separator">|</span>
-                    <a href="#terms">Terms of Service</a>
+
                     <span class="separator">|</span>
                     <a href="https://webcraftio.com" target="_blank" rel="noopener noreferrer" class="webcraftio-link">
                         Designed & Created by WebCraftio
@@ -333,4 +1034,5 @@
     <script src="script.js"></script>
     <script src="service-pages.js"></script>
 </body>
+
 </html>
