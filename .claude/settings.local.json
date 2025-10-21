@@ -8,7 +8,8 @@
       "mcp__figma-desktop__get_screenshot",
       "mcp__figma-desktop__create_design_system_rules",
       "mcp__figma-desktop__get_design_context",
-      "WebSearch"
+      "WebSearch",
+      "Bash(curl -v http://127.0.0.1:3845/mcp)"
     ],
     "deny": [],
     "ask": []

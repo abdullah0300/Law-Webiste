@@ -101,7 +101,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const targetElement = document.querySelector(targetId);
 
         if (targetElement) {
-            const offsetTop = targetElement.offsetTop - 80; // 80px offset for fixed header
+            let offsetTop = targetElement.offsetTop;
+
+            // For sections after hero, adjust offset
+            if (targetId !== '#home') {
+                offsetTop = targetElement.offsetTop - 0;
+            }
 
             window.scrollTo({
                 top: offsetTop,
@@ -149,9 +154,10 @@ document.querySelectorAll('.service-card').forEach(card => {
     observer.observe(card);
 });
 
-// Sticky Navbar Visibility on Scroll
+// Sticky Navbar Visibility on Scroll and Hero Section Management
 const header = document.querySelector('.header');
 const stickyNav = document.querySelector('.nav-sticky');
+const aboutSection = document.querySelector('#about');
 const heroHeight = window.innerHeight; // 100vh
 
 window.addEventListener('scroll', () => {
@@ -162,6 +168,20 @@ window.addEventListener('scroll', () => {
         stickyNav.classList.add('visible');
     } else {
         stickyNav.classList.remove('visible');
+    }
+
+    // Fade out hero section as About section starts coming up
+    if (currentScroll > heroHeight * 0.5) {
+        const fadeProgress = Math.min((currentScroll - heroHeight * 0.5) / (heroHeight * 0.5), 1);
+        header.style.opacity = 1 - fadeProgress;
+        if (fadeProgress >= 1) {
+            header.style.pointerEvents = 'none';
+        } else {
+            header.style.pointerEvents = 'auto';
+        }
+    } else {
+        header.style.opacity = '1';
+        header.style.pointerEvents = 'auto';
     }
 });
 
