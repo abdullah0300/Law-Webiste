@@ -10,21 +10,21 @@
 :root {
     /* Colors */
     --primary-purple: #904ce9;
-    --dark-bg: #1a1a1a;
-    --black: #000000;
-    --dark-gray: #303030;
-    --white: #ffffff;
-    --border-gray: #6e6e6e;
-    --text-gray: #575555;
-    --form-border: #4b4b4b;
-    --light-gray: #b4b4b4;
-    --transparent-white: rgba(255, 255, 255, 0.22);
+    --dark-bg: #1e2a4a;
+    --black: #0f1a2e;
+    --dark-gray: #2d3e5f;
+    --white: #fafafa;
+    --border-gray: #6e7a8f;
+    --text-gray: #8a94a6;
+    --form-border: #4b5563;
+    --light-gray: #d1d5db;
+    --transparent-white: rgba(250, 250, 250, 0.22);
 
     /* Typography */
-    --font-urbanist: 'Urbanist', sans-serif;
-    --font-poppins: 'Poppins', sans-serif;
-    --font-source-serif: 'Source Serif Pro', serif;
-    --font-dm-sans: 'DM Sans', sans-serif;
+    --font-urbanist: 'Garamond', 'Georgia', serif;
+    --font-poppins: 'Garamond', 'Georgia', serif;
+    --font-source-serif: 'Garamond', 'Georgia', serif;
+    --font-dm-sans: 'Garamond', 'Georgia', serif;
 }
 
 html {
@@ -34,10 +34,10 @@ html {
 
 body {
     font-family: var(--font-urbanist);
-    color: var(--white);
+    color: #1a1a1a;
     background-color: var(--white);
     overflow-x: hidden;
-    line-height: 1.5;
+    line-height: 1.6;
     -webkit-overflow-scrolling: touch;
 }
 
@@ -101,7 +101,7 @@ img {
     justify-content: flex-start;
     padding: 15px 40px;
     width: 100%;
-    background: #000000;
+    background: #0f1a2e;
     backdrop-filter: blur(10px);
     transform: translateY(-100%);
     transition: transform 0.3s ease;
@@ -142,7 +142,7 @@ img {
     justify-content: center;
     padding: 2px 11px;
     height: auto;
-    background: #2a2a2a;
+    background: #2d3e5f;
     border-radius: 30px;
     white-space: nowrap;
     overflow: visible;
@@ -175,7 +175,7 @@ img {
     margin-left: auto;
     opacity: 1;
     animation: none;
-    background: #2a2a2a;
+    background: #2d3e5f;
     border: none;
     padding: 6px 18px;
     height: auto;
