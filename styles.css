@@ -1881,3 +1881,217 @@ img {
     }
 }
 
+/* ===========================
+   ADDITIONAL RESPONSIVE STYLES FOR NEW CONTENT
+   =========================== */
+
+/* Hero Description Responsive */
+.hero-description {
+    font-size: clamp(16px, 2.5vw, 22px);
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 20px auto 0;
+    padding: 0 20px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+@media screen and (max-width: 768px) {
+    .hero-description {
+        font-size: 16px;
+        line-height: 1.5;
+        padding: 0 30px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero-description {
+        font-size: 15px;
+        padding: 0 20px;
+    }
+}
+
+/* About Section Title Responsive */
+.section-title {
+    font-size: clamp(28px, 5vw, 48px);
+    line-height: 1.2;
+    margin-bottom: 30px;
+}
+
+/* Service Section Responsive */
+@media screen and (max-width: 768px) {
+    .service-section {
+        padding: 60px 0;
+    }
+
+    .service-content {
+        padding: 40px 25px;
+    }
+
+    .service-title {
+        font-size: 32px;
+    }
+
+    .service-learn-more {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .service-section {
+        padding: 40px 0;
+    }
+
+    .service-content {
+        padding: 30px 20px;
+    }
+
+    .service-title {
+        font-size: 28px;
+    }
+
+    .service-description {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+}
+
+/* Navigation improvements for mobile */
+@media screen and (max-width: 768px) {
+    .nav-container {
+        padding: 15px 20px;
+    }
+
+    .nav-sticky {
+        padding: 12px 20px;
+    }
+
+    .logo {
+        font-size: 22px;
+        z-index: 1001;
+    }
+
+    .mobile-menu-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    .mobile-menu-toggle span {
+        width: 25px;
+        height: 2px;
+        background: white;
+        transition: all 0.3s ease;
+    }
+
+    .mobile-menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(7px, 7px);
+    }
+
+    .mobile-menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .mobile-menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+    }
+}
+
+/* Approach Section Responsive */
+@media screen and (max-width: 1024px) {
+    .approach-section {
+        min-height: auto;
+    }
+
+    .approach-content {
+        padding: 50px 30px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .approach-content {
+        padding: 40px 25px;
+    }
+
+    .approach-title {
+        font-size: 32px;
+        line-height: 1.3;
+    }
+
+    .approach-description {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .approach-content {
+        padding: 30px 20px;
+    }
+
+    .approach-title {
+        font-size: 28px;
+    }
+
+    .approach-description {
+        font-size: 15px;
+    }
+}
+
+/* Ensure images are responsive */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Container padding for mobile */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 0 25px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 0 20px;
+    }
+}
+
+/* Service Image Responsive */
+.service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 768px) {
+    .service-image {
+        min-height: 300px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .service-image {
+        min-height: 250px;
+    }
+}
+
+/* Video responsive for header */
+@media screen and (max-width: 768px) {
+    .header {
+        min-height: 600px;
+    }
+
+    .header-video {
+        object-position: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header {
+        min-height: 500px;
+    }
+}
+
