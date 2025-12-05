@@ -21,6 +21,7 @@
     --transparent-white: rgba(255, 255, 255, 0.22);
 
     /* Typography */
+    --font-garamond: 'EB Garamond', serif;
     --font-urbanist: 'Urbanist', sans-serif;
     --font-poppins: 'Poppins', sans-serif;
     --font-source-serif: 'Source Serif Pro', serif;
@@ -33,11 +34,11 @@ html {
 }
 
 body {
-    font-family: var(--font-urbanist);
+    font-family: var(--font-garamond);
     color: var(--white);
     background-color: var(--white);
     overflow-x: hidden;
-    line-height: 1.5;
+    line-height: 1.6;
     -webkit-overflow-scrolling: touch;
 }
 
@@ -452,6 +453,17 @@ img {
     text-decoration: underline solid;
     text-decoration-skip-ink: none;
     text-underline-offset: 10.5%;
+}
+
+.hero-subtitle {
+    font-family: var(--font-garamond);
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 24px;
+    max-width: 800px;
+    white-space: normal;
 }
 
 /* Talk Now Button */
