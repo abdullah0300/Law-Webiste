@@ -1165,89 +1165,178 @@ img {
 
 /* Tablet Portrait (768px) */
 @media screen and (max-width: 768px) {
-    .nav-hero .nav-menu {
-        position: fixed;
-        top: 0;
-        left: -100%;
-        width: 70%;
-        height: 100vh;
-        background: rgba(0, 0, 0, 0.95);
-        flex-direction: column;
-        padding: 100px 30px;
-        transition: left 0.3s ease;
-        z-index: 999;
-        gap: 10px;
+
+    /* ===== MOBILE NAVBAR STYLES ===== */
+
+    /* Hero Navbar Container */
+    .nav-hero {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 25px;
+        position: relative;
+        z-index: 10;
     }
 
-    .nav-hero .nav-menu.active {
-        left: 0;
-    }
-
-    .nav-hero .nav-menu .nav-item {
+    /* Logo positioning fix */
+    .nav-hero .logo,
+    .nav-sticky .logo {
         position: static;
         opacity: 1;
         animation: none;
     }
 
-    .nav-hero .nav-menu .nav-link {
-        width: 100%;
-        text-align: left;
-        padding: 12px 20px;
-        height: auto;
-        line-height: 1.4;
-    }
-
-    .nav-sticky .nav-menu {
-        position: fixed;
-        top: 0;
-        left: -100%;
-        width: 70%;
-        height: 100vh;
-        background: rgba(0, 0, 0, 0.95);
-        flex-direction: column;
-        padding: 100px 30px;
-        transition: left 0.3s ease;
-        z-index: 999;
-        gap: 15px;
-    }
-
-    .nav-sticky .nav-menu.active {
-        left: 0;
-    }
-
-    .nav-sticky .nav-link {
-        width: 100%;
-        justify-content: flex-start;
-    }
-
-    .mobile-menu-toggle {
-        display: flex;
-        z-index: 1000;
-        position: absolute;
-        right: 20px;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-
-    .nav-hero {
-        padding: 20px;
-    }
-
-    .nav-hero .btn-consultation {
-        display: none;
-    }
-
+    /* Hide consultation button on mobile */
+    .nav-hero .btn-consultation,
     .nav-sticky .btn-consultation {
         display: none;
     }
 
-    .nav-sticky .mobile-menu-toggle {
+    /* Mobile Menu Toggle Button */
+    .mobile-menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        z-index: 1001;
         position: relative;
-        right: auto;
-        top: auto;
+        gap: 6px;
+    }
+
+    .mobile-menu-toggle span {
+        display: block;
+        width: 28px;
+        height: 3px;
+        background-color: var(--white);
+        border-radius: 3px;
+        transition: all 0.3s ease;
+        transform-origin: center;
+    }
+
+    /* Hamburger to X animation */
+    .mobile-menu-toggle.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .mobile-menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+
+    .mobile-menu-toggle.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+    /* Slide-out Navigation Menu */
+    .nav-hero .nav-menu,
+    .nav-sticky .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        max-width: 80%;
+        height: 100vh;
+        background: linear-gradient(180deg, #1a1a1a 0%, #0d0d0d 100%);
+        flex-direction: column;
+        padding: 100px 0 40px;
+        transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        z-index: 1000;
+        box-shadow: -10px 0 40px rgba(0, 0, 0, 0.5);
+        gap: 0;
+        overflow-y: auto;
+    }
+
+    .nav-hero .nav-menu.active,
+    .nav-sticky .nav-menu.active {
+        right: 0;
+    }
+
+    /* Reset nav items for mobile */
+    .nav-hero .nav-menu .nav-item,
+    .nav-sticky .nav-menu .nav-item {
+        position: static;
+        opacity: 1;
+        animation: none;
+        margin: 0;
+        width: 100%;
+    }
+
+    /* Mobile nav links styling */
+    .nav-hero .nav-menu .nav-link,
+    .nav-sticky .nav-menu .nav-link {
+        display: block;
+        width: 100%;
+        height: auto;
+        padding: 18px 30px;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1.4;
+        text-align: left;
+        background: transparent;
+        border-radius: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        transition: all 0.3s ease;
+        overflow: visible;
+    }
+
+    .nav-hero .nav-menu .nav-link:hover,
+    .nav-sticky .nav-menu .nav-link:hover {
+        background: rgba(144, 76, 233, 0.15);
+        padding-left: 40px;
+    }
+
+    .nav-hero .nav-menu .nav-link.active,
+    .nav-sticky .nav-menu .nav-link.active {
+        background: var(--primary-purple);
+        border-left: 4px solid #b896ff;
+    }
+
+    /* Hide hover text in mobile menu */
+    .nav-hero .nav-menu .nav-text-hover,
+    .nav-sticky .nav-menu .nav-text-hover {
+        display: none;
+    }
+
+    .nav-hero .nav-menu .nav-text,
+    .nav-sticky .nav-menu .nav-text {
+        position: static;
         transform: none;
+    }
+
+    /* Sticky Nav specific mobile styles */
+    .nav-sticky {
+        padding: 12px 20px;
+    }
+
+    .nav-sticky .mobile-menu-toggle {
+        position: static;
         margin-left: auto;
     }
+
+    /* Mobile menu overlay */
+    .nav-menu::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.6);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: -1;
+    }
+
+    .nav-menu.active::before {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* ===== END MOBILE NAVBAR ===== */
 
     /* Hero Section - Tablet */
     .hero-content {
@@ -1388,14 +1477,40 @@ img {
         min-height: 500px;
     }
 
-    .nav-container {
-        padding: 20px;
+    /* Mobile Navbar - Small Screens */
+    .nav-hero {
+        padding: 15px 20px;
     }
 
-    .logo {
+    .nav-hero .logo,
+    .nav-sticky .logo {
         font-size: 20px;
-        left: 20px;
-        top: 20px;
+    }
+
+    .nav-hero .nav-menu,
+    .nav-sticky .nav-menu {
+        width: 260px;
+        padding: 80px 0 30px;
+    }
+
+    .nav-hero .nav-menu .nav-link,
+    .nav-sticky .nav-menu .nav-link {
+        padding: 16px 25px;
+        font-size: 15px;
+    }
+
+    .mobile-menu-toggle {
+        width: 36px;
+        height: 36px;
+    }
+
+    .mobile-menu-toggle span {
+        width: 24px;
+        height: 2px;
+    }
+
+    .nav-sticky {
+        padding: 10px 15px;
     }
 
     /* Hero Section - Mobile */
@@ -1967,6 +2082,40 @@ img {
 
 /* Extra Small Mobile (360px) */
 @media screen and (max-width: 360px) {
+    /* Navbar - Extra Small */
+    .nav-hero {
+        padding: 12px 15px;
+    }
+
+    .nav-hero .logo,
+    .nav-sticky .logo {
+        font-size: 18px;
+    }
+
+    .nav-hero .nav-menu,
+    .nav-sticky .nav-menu {
+        width: 240px;
+        padding: 70px 0 25px;
+    }
+
+    .nav-hero .nav-menu .nav-link,
+    .nav-sticky .nav-menu .nav-link {
+        padding: 14px 20px;
+        font-size: 14px;
+    }
+
+    .mobile-menu-toggle {
+        width: 32px;
+        height: 32px;
+        gap: 5px;
+    }
+
+    .mobile-menu-toggle span {
+        width: 22px;
+        height: 2px;
+    }
+
+    /* Hero - Extra Small */
     .hero-title {
         font-size: 24px;
         line-height: 32px;
@@ -1979,10 +2128,6 @@ img {
 
     .hero-content {
         padding: 0 15px;
-    }
-
-    .logo {
-        font-size: 18px;
     }
 }
 
