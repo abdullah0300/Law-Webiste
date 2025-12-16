@@ -1176,10 +1176,25 @@ img {
         padding: 100px 30px;
         transition: left 0.3s ease;
         z-index: 999;
+        gap: 10px;
     }
 
     .nav-hero .nav-menu.active {
         left: 0;
+    }
+
+    .nav-hero .nav-menu .nav-item {
+        position: static;
+        opacity: 1;
+        animation: none;
+    }
+
+    .nav-hero .nav-menu .nav-link {
+        width: 100%;
+        text-align: left;
+        padding: 12px 20px;
+        height: auto;
+        line-height: 1.4;
     }
 
     .nav-sticky .nav-menu {
@@ -1208,7 +1223,14 @@ img {
     .mobile-menu-toggle {
         display: flex;
         z-index: 1000;
-        position: relative;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .nav-hero {
+        padding: 20px;
     }
 
     .nav-hero .btn-consultation {
@@ -1219,10 +1241,35 @@ img {
         display: none;
     }
 
+    .nav-sticky .mobile-menu-toggle {
+        position: relative;
+        right: auto;
+        top: auto;
+        transform: none;
+        margin-left: auto;
+    }
+
+    /* Hero Section - Tablet */
+    .hero-content {
+        white-space: normal;
+        width: 90%;
+        max-width: 600px;
+        padding: 0 20px;
+        top: 55%;
+    }
+
     .hero-title {
-        font-size: 28px;
-        line-height: 36px;
-        padding: 60px 20px 0;
+        font-size: 36px;
+        line-height: 44px;
+        white-space: normal;
+        word-wrap: break-word;
+    }
+
+    .hero-subtitle {
+        font-size: 18px;
+        line-height: 1.6;
+        margin-top: 20px;
+        max-width: 100%;
     }
 
     .approach-section,
@@ -1337,7 +1384,8 @@ img {
 /* Mobile (480px) */
 @media screen and (max-width: 480px) {
     .header {
-        height: 500px;
+        height: 100vh;
+        min-height: 500px;
     }
 
     .nav-container {
@@ -1346,15 +1394,39 @@ img {
 
     .logo {
         font-size: 20px;
+        left: 20px;
+        top: 20px;
+    }
+
+    /* Hero Section - Mobile */
+    .hero-content {
+        white-space: normal;
+        width: 100%;
+        max-width: none;
+        padding: 0 20px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 
     .hero-title {
-        font-size: 22px;
-        line-height: 30px;
+        font-size: 28px;
+        line-height: 36px;
+        white-space: normal;
+        word-wrap: break-word;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+        line-height: 1.5;
+        margin-top: 16px;
+        max-width: 100%;
+        padding: 0;
     }
 
     .about-section {
         padding: 50px 20px;
+        margin-top: 100vh;
     }
 
     .about-description {
@@ -1890,6 +1962,27 @@ img {
     .social-icon svg {
         width: 16px;
         height: 16px;
+    }
+}
+
+/* Extra Small Mobile (360px) */
+@media screen and (max-width: 360px) {
+    .hero-title {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    .hero-subtitle {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .hero-content {
+        padding: 0 15px;
+    }
+
+    .logo {
+        font-size: 18px;
     }
 }
 
