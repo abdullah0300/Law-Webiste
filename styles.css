@@ -228,6 +228,17 @@ img {
     animation: fadeIn 1s ease 0.3s forwards;
 }
 
+.logo img {
+    height: 60px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.nav-sticky .logo img {
+    height: 50px;
+}
+
 .nav-menu {
     display: flex;
     list-style: none;
