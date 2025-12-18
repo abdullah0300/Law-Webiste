@@ -10,7 +10,7 @@
 :root {
     /* Colors */
     --primary-purple: #904ce9;
-    --dark-bg: #1a1a1a;
+    --dark-bg: #0B1F3B;
     --black: #000000;
     --dark-gray: #303030;
     --white: #ffffff;
@@ -102,7 +102,7 @@ img {
     justify-content: flex-start;
     padding: 15px 40px;
     width: 100%;
-    background: #000000;
+    background: #0B1F3B;
     backdrop-filter: blur(10px);
     transform: translateY(-100%);
     transition: transform 0.3s ease;
@@ -143,7 +143,7 @@ img {
     justify-content: center;
     padding: 2px 11px;
     height: auto;
-    background: #2a2a2a;
+    background: #163a5f;
     border-radius: 30px;
     white-space: nowrap;
     overflow: visible;
@@ -176,7 +176,7 @@ img {
     margin-left: auto;
     opacity: 1;
     animation: none;
-    background: #2a2a2a;
+    background: #163a5f;
     border: none;
     padding: 6px 18px;
     height: auto;
@@ -676,7 +676,7 @@ img {
 }
 
 .service-learn-more:hover {
-    background: #1a1a1a;
+    background: #0B1F3B;
     transform: translateY(-2px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     gap: 14px;
@@ -793,7 +793,7 @@ img {
 .tab-item.active {
     font-weight: 600;
     background: var(--white);
-    color: #1a1a1a;
+    color: #0B1F3B;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -802,7 +802,7 @@ img {
 }
 
 .tab-item.active:hover {
-    color: #1a1a1a;
+    color: #0B1F3B;
 }
 
 .services-grid {
@@ -871,7 +871,7 @@ img {
     font-weight: 700;
     line-height: 1.4;
     letter-spacing: -0.2px;
-    color: #1a1a1a;
+    color: #0B1F3B;
     margin-bottom: 12px;
     margin-top: 0;
 }
@@ -1242,7 +1242,7 @@ img {
         width: 280px !important;
         max-width: 80vw !important;
         height: 100vh !important;
-        background: #111111 !important;
+        background: #0B1F3B !important;
         flex-direction: column !important;
         align-items: stretch !important;
         justify-content: flex-start !important;
@@ -1342,7 +1342,7 @@ img {
         width: 280px !important;
         max-width: 80vw !important;
         height: 100vh !important;
-        background: #111111 !important;
+        background: #0B1F3B !important;
         flex-direction: column !important;
         align-items: stretch !important;
         justify-content: flex-start !important;
@@ -1842,7 +1842,7 @@ img {
     font-weight: 700;
     line-height: 1.3;
     letter-spacing: -0.5px;
-    color: #1a1a1a;
+    color: #0B1F3B;
     margin: 0;
 }
 
@@ -1886,7 +1886,7 @@ img {
     font-weight: 700;
     line-height: 1.4;
     letter-spacing: 0.5px;
-    color: #1a1a1a;
+    color: #0B1F3B;
     text-transform: uppercase;
     margin: 0 0 24px 0;
 }
@@ -1989,7 +1989,7 @@ img {
     font-family: var(--font-urbanist);
     font-size: 14px;
     font-weight: 600;
-    color: #1a1a1a;
+    color: #0B1F3B;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     margin: 0 0 16px 0;
