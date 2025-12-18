@@ -207,10 +207,21 @@ img {
     position: relative;
     z-index: 10;
     display: flex;
-    align-items: flex-start;
-    padding: 39px 40px;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 30px 40px;
     max-width: 1440px;
     margin: 0 auto;
+    gap: 40px;
+}
+
+.nav-hero .logo {
+    position: relative;
+    left: auto;
+    top: auto;
+    flex-shrink: 0;
+    opacity: 0;
+    animation: fadeIn 1s ease 0.3s forwards;
 }
 
 .logo {
@@ -221,11 +232,6 @@ img {
     color: var(--white);
     text-transform: capitalize;
     line-height: 35px;
-    position: absolute;
-    left: 40px;
-    top: 39px;
-    opacity: 0;
-    animation: fadeIn 1s ease 0.3s forwards;
 }
 
 .logo img {
@@ -239,19 +245,33 @@ img {
     height: 50px;
 }
 
+.nav-hero .nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 0;
+    gap: 10px;
     align-items: center;
     padding: 0;
     margin: 0;
 }
 
-.nav-item {
-    position: absolute;
+.nav-hero .nav-item {
+    position: relative;
     margin: 0;
     opacity: 0;
+}
+
+.nav-item {
+    margin: 0;
 }
 
 .nav-link {
@@ -306,55 +326,42 @@ img {
     background-color: var(--primary-purple);
 }
 
-/* Home */
-.nav-item-home {
-    left: 89px;
-    top: 39px;
+/* Hero navbar nav-item animations */
+.nav-hero .nav-item-home {
     animation: fadeIn 1s ease 0.4s forwards;
 }
 
-.nav-item-home .nav-link {
-    width: 73px;
+.nav-hero .nav-item-about {
+    animation: fadeIn 1s ease 0.6s forwards;
 }
 
-/* About Us */
-.nav-item-about {
-    left: 180px;
-    top: 39px;
-    animation: fadeIn 1s ease 0.6s forwards;
+.nav-hero .nav-item-whyus {
+    animation: fadeIn 1s ease 0.8s forwards;
+}
+
+.nav-hero .nav-item-services {
+    animation: fadeIn 1s ease 1s forwards;
+}
+
+.nav-hero .nav-item-contact {
+    animation: fadeIn 1s ease 1.2s forwards;
+}
+
+/* Nav link widths */
+.nav-item-home .nav-link {
+    width: 73px;
 }
 
 .nav-item-about .nav-link {
     width: 90px;
 }
 
-/* Why Us */
-.nav-item-whyus {
-    left: 290px;
-    top: 39px;
-    animation: fadeIn 1s ease 0.8s forwards;
-}
-
 .nav-item-whyus .nav-link {
     width: 80px;
 }
 
-/* Services */
-.nav-item-services {
-    left: 390px;
-    top: 39px;
-    animation: fadeIn 1s ease 1s forwards;
-}
-
 .nav-item-services .nav-link {
     width: 90px;
-}
-
-/* Contact Us */
-.nav-item-contact {
-    left: 500px;
-    top: 39px;
-    animation: fadeIn 1s ease 1.2s forwards;
 }
 
 .nav-item-contact .nav-link {
@@ -362,9 +369,7 @@ img {
 }
 
 .btn-consultation {
-    position: absolute;
-    left: 1227px;
-    top: 3px;
+    position: relative;
     width: 166px;
     height: 35px;
     font-family: var(--font-poppins);
@@ -380,10 +385,14 @@ img {
     line-height: 35px;
     text-align: center;
     transition: all 0.3s ease;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.nav-hero .btn-consultation {
+    margin-left: auto;
     opacity: 0;
     animation: fadeIn 1s ease 1.2s forwards;
-    overflow: hidden;
-    position: relative;
 }
 
 .btn-text,
